@@ -1,2 +1,1 @@
-# blueline
 # it_assets
