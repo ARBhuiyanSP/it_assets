@@ -34,7 +34,7 @@
 								
 									<div class="form-group">
 										<div class="col-md-12">
-										   <label class="control-label">Select Product For Assign Entry</label>
+										   <label class="control-label">Select Product For History Check</label>
 										   <select name="id" class="form-control select2">
 												<option>Select Product</option>
 												<?php
@@ -42,7 +42,7 @@
 												$resultvs = mysqli_query($link,$sqlvs);
 												while($rowvs = mysqli_fetch_array($resultvs)) {
 												?>
-												<option value="<?php echo $rowvs['id'] ?>"><?php echo $rowvs['id'] ?> || <?php echo $rowvs['item_name'] ?> || <?php echo $rowvs['model'] ?> || <?php echo $rowvs['rlp_no'] ?></option>
+												<option value="<?php echo $rowvs['id'] ?>"><?php echo $rowvs['sl_no'] ?> || <?php echo $rowvs['item_name'] ?> || <?php echo $rowvs['model'] ?> || <?php echo $rowvs['assets_description'] ?></option>
 												<?php } ?>
 											</select>
 										</div>
