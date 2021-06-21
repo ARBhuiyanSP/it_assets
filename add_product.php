@@ -29,6 +29,7 @@ if(isset($_POST['Submit']) && !empty($_POST['Submit']) ){
 
 	$sl_no 				= $_POST['sl_no'];
 	$store_id 			= $_POST['store_id'];
+	$received_by 			= $_POST['received_by'];
 	$assets_category 	= $_POST['assets_category'];
 	$item_name 			= $_POST['item_name'];
 	$assets_description = $_POST['assets_description'];
@@ -74,7 +75,7 @@ if(isset($_POST['Submit']) && !empty($_POST['Submit']) ){
 	}
 	## Check Null Value End
 
-	$sql	=	"insert into `ams_products` values('','$sl_no','$assets_category','$item_name','$assets_description','$brand','$model','$manufacturing_sl','$rlp_no','','$purchase_order','$delivery_chalan','$vendor_name','$purchase_date','$warrenty','$purchase_value','$origin','$custody','$status','$condition','$slimg','$proimg','$pngAbsoluteFilePath','','','$store_id','','')";
+	$sql	=	"insert into `ams_products` values('','$sl_no','$assets_category','$item_name','$assets_description','$brand','$model','$manufacturing_sl','$rlp_no','','$purchase_order','$delivery_chalan','$vendor_name','$purchase_date','$warrenty','$purchase_value','$origin','$custody','$status','$condition','$slimg','$proimg','$pngAbsoluteFilePath','','','$store_id','$received_by','','')";
 
 	mysqli_query($link, $sql);
 	

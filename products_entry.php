@@ -149,7 +149,7 @@ include('helper/utilities.php');
 									</div>
 									<div class="col-xs-2">
 										<div class="form-group">
-											<label>Warrenty</label>
+											<label>Warranty</label>
 											<input name="warrenty" type="text" class="form-control" id="mobileno" value="" size="30" required />
 										</div>
 									</div>
@@ -203,6 +203,19 @@ include('helper/utilities.php');
 										<div class="form-group">
 											<label class="control-label">Product Original Photo</label>
 											<input type="file" name="profileToUpload" class="filestyle" data-buttonname="btn-default" >
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="form-group">
+											<label>Received By</label>
+											<?php 
+												$employee_id = $_SESSION["employee_id"];
+												$sqlemployee	= "select * from `employees` where `employee_id`='$employee_id'";
+												$resultemployee = mysqli_query($link, $sqlemployee);
+												$rowemployee=mysqli_fetch_array($resultemployee);
+											?>
+											<input name="" type="text" class="form-control" id="laptop" value="<?php echo $rowemployee["employee_name"]; ?>" size="30" required readonly />
+											<input name="received_by" type="hidden" value="<?php echo $rowemployee["employee_id"]; ?>" />
 										</div>
 									</div>
 									<div class="col-xs-12">

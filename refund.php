@@ -106,7 +106,7 @@
 								</div>
 								<div class="col-xs-2">
 									<div class="form-group">
-										<label>Refund Date</label>
+										<label>Return Date</label>
 										<input name="refund_date" type="text" class="form-control" id="rndate" value="" size="30" autocomplete="off"/>
 									</div>
 								</div>
@@ -119,7 +119,7 @@
 									</div>
 								</div>
 							</div>
-							<button class="btn btn-danger" type="submit" name="submit"> Refund This Product</i></button>
+							<button class="btn btn-danger" type="submit" name="submit"> Return This Product</i></button>
 							<input type="hidden" name="id" value="<?php echo $row2['id'] ?>" />
 							<input type="hidden" name="product_id" value="<?php echo $product_id ?>" />
 						</form>

@@ -115,7 +115,7 @@ $id=$_GET['id'];
 									</div>
 									<div class="col-xs-2">
 										<div class="form-group">
-											<label>Warrenty</label>
+											<label>Warranty</label>
 											<input name="warrenty" type="text" class="form-control" id="mobileno" value="<?php echo $row['warrenty'] ?>" size="30" required />
 										</div>
 									</div>
@@ -171,6 +171,20 @@ $id=$_GET['id'];
 											<span class="desc"><img height="50px" src="products_photo/<?php echo $row['pro_photo']; ?>"  style="background-color:#9972B5;"/></span>
 											<input type="hidden" name="pro_old_image" value="<?php echo $row['pro_photo']; ?>"  />
 											<input type="file" name="pro_prt_image" class="filestyle" data-buttonname="btn-default">
+										</div>
+									</div>
+									
+									<div class="col-xs-4">
+										<div class="form-group">
+											<label>Received By</label>
+											<?php 
+												$employee_id = $_SESSION["employee_id"];
+												$sqlemployee	= "select * from `employees` where `employee_id`='$employee_id'";
+												$resultemployee = mysqli_query($link, $sqlemployee);
+												$rowemployee=mysqli_fetch_array($resultemployee);
+											?>
+											<input name="" type="text" class="form-control" id="laptop" value="<?php echo $row['received_by']; ?>" size="30" required readonly />
+											<input name="received_by" type="hidden" value="<?php echo $rowemployee["employee_id"]; ?>" />
 										</div>
 									</div>
 									<input type="hidden" name="id" value="<?php echo $row['id']; ?>"  />

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2021 at 11:34 AM
+-- Generation Time: Jun 21, 2021 at 01:00 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -54,6 +54,7 @@ CREATE TABLE `ams_products` (
   `assign_status` varchar(100) NOT NULL,
   `rent_status` enum('0','1') NOT NULL DEFAULT '1',
   `store_id` varchar(11) NOT NULL,
+  `received_by` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3763,6 +3764,8 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `store_id` int(11) NOT NULL,
+  `role` varchar(30) NOT NULL,
+  `employee_id` varchar(30) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -3770,9 +3773,19 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `store_id`, `created_at`) VALUES
-(3, 'AdminIT', '$2y$10$//jltugEK.DEzvqlnazxMejcgl405WrcXd4OJx8kjpezDZ5ZHT3F2', 1, '2021-06-13 14:11:35'),
-(4, 'Admin_CIT', '$2y$10$4GkMTNySMfTzpp2jDAQQFuRF.2z7OtBSCENiAgNK871iINNmLehia', 4, '2021-06-15 16:42:35');
+INSERT INTO `users` (`id`, `username`, `password`, `store_id`, `role`, `employee_id`, `created_at`) VALUES
+(3, 'AdminIT', '$2y$10$//jltugEK.DEzvqlnazxMejcgl405WrcXd4OJx8kjpezDZ5ZHT3F2', 1, 'superadmin', '0', '2021-06-13 14:11:35'),
+(4, 'SPL-000608', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 4, 'admin', 'SPL-000608', '2021-06-15 16:42:35'),
+(5, 'SPL-007729', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 4, 'admin', 'SPL-007729', '2021-06-21 12:43:56'),
+(6, 'SPL-007299', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 4, 'user', 'SPL-007299', '2021-06-21 12:43:56'),
+(7, 'SPL-008578', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 4, 'user', 'SPL-008578', '2021-06-21 12:43:56'),
+(8, 'SPL-007175', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 4, 'user', 'SPL-007175', '2021-06-21 12:43:56'),
+(9, 'SPL-006897', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 2, 'user', 'SPL-006897', '2021-06-15 16:42:35'),
+(10, 'SPL-007967', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 2, 'user', 'SPL-007967', '2021-06-21 12:43:56'),
+(11, 'SPL-007885', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 2, 'user', 'SPL-007885', '2021-06-21 12:43:56'),
+(12, 'SPL-007797', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 3, 'user', 'SPL-007797', '2021-06-21 12:43:56'),
+(13, 'SPL-000796', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 4, 'admin', 'SPL-000796', '2021-06-15 16:42:35'),
+(14, 'SPL-000081', '$2y$10$FmxzShw5gQZAZF2FxhqdV.DKCKpQqIj5mfEtoBGItW7PGMHEzPEaK', 4, 'user', 'SPL-000081', '2021-06-15 16:42:35');
 
 -- --------------------------------------------------------
 
@@ -3792,6 +3805,13 @@ CREATE TABLE `vendors` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `vendors`
+--
+
+INSERT INTO `vendors` (`id`, `vendor_id`, `vendor_name`, `address`, `email`, `phone`, `web`, `status`, `created_at`, `updated_at`) VALUES
+(6, 'V-001', 'AST', '', '', '', '', 1, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -3871,7 +3891,7 @@ ALTER TABLE `vendors`
 -- AUTO_INCREMENT for table `ams_products`
 --
 ALTER TABLE `ams_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=287;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=290;
 
 --
 -- AUTO_INCREMENT for table `assets_categories`
@@ -3913,7 +3933,7 @@ ALTER TABLE `gate_pass`
 -- AUTO_INCREMENT for table `product_assign`
 --
 ALTER TABLE `product_assign`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `store`
@@ -3925,13 +3945,13 @@ ALTER TABLE `store`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

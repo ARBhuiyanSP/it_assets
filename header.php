@@ -124,6 +124,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <div id="sidebar-menu">
                         <ul>
                         	<li class="menu-title" style="color:#ffffff;">Navigation</li>
+							
+							
+							<?php if($_SESSION["role"] == 'admin'){ ?>
 							<li class="menu-title" style="background-color:#AF4940;color:#ffffff;">Settings</li>
 							<li style="background-color:#049458;">
 								<a href="javascript: void(0);" class="waves-effect waves-light">
@@ -142,6 +145,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<li><a href="employee_entry.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Employee Entry</span></a></li>
 								</ul>
 							</li>
+							<?php } ?>
+							
 							<li class="menu-title" style="background-color:#AF4940;color:#ffffff;">User Area</li>
 							<li style="background-color:#049458;">
                                 <a href="dashboard.php" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>

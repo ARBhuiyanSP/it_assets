@@ -151,7 +151,7 @@ $id=$_GET['id'];
 							
 							<button class="btn btn-danger" onclick="window.location.href = 'transfer.php?id=<?php echo $row['product_id'] ?>'"><i class="fa fa-hand-o-right" aria-hidden="true" style="  font-size: 17px;"> Transfer To Another User</i></button>
 							
-							<button class="btn btn-warning" onclick="window.location.href = 'refund.php?id=<?php echo $row['product_id'] ?>'"><i class="fa fa-hand-o-right" aria-hidden="true" style="  font-size: 17px;"> Refund From User</i></button>
+							<button class="btn btn-warning" onclick="window.location.href = 'refund.php?id=<?php echo $row['product_id'] ?>'"><i class="fa fa-hand-o-right" aria-hidden="true" style="  font-size: 17px;"> Return From User</i></button>
 						</div> <!-- container -->
                     </div> <!-- container -->
 					
