@@ -139,7 +139,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 									<li><a href="department.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Department </span></a></li>
 									<li><a href="designation.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Designation </span></a></li>
 									<li><a href="assets_category.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Assets Category </span></a></li>
-									<li><a href="employee_entry.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Assets Category </span></a></li>
+									<li><a href="employee_entry.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Employee Entry</span></a></li>
 								</ul>
 							</li>
 							<li class="menu-title" style="background-color:#AF4940;color:#ffffff;">User Area</li>

@@ -36,7 +36,7 @@
                 <form id="sidebar">
                     <div class="form-group">
                         <label for="nm">Employee ID</label>
-                        <input type="text" id="id" name="id" class="form-control" Value="BLC-"/>
+                        <input type="text" id="id" name="id" class="form-control" Value=""/>
                     </div>
 					<div class="form-group">
                         <label for="nm">Employee Name</label>
