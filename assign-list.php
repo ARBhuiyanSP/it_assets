@@ -61,8 +61,8 @@
 													$rowp=mysqli_fetch_array($result2)
 													
 												?>
-												<td><span class="text"><?php echo $row['product_id'] ?></span></td>
-												<td><span class="text">Product Name</span></td>
+												<td><span class="text"><?php echo $rowp['sl_no'] ?></span></td>
+												<td><span class="text"><?php echo $rowp['item_name'] ?></span></td>
 												<td><span class="text"><?php echo $row['employee_id'] ?></span></td>
 												<td><span class="text"><?php echo $row['assign_date'] ?></span></td>
 												<td><span class="text"><?php echo $row['remarks'] ?></span></td>
