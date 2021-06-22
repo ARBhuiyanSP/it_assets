@@ -39,7 +39,7 @@
 							<button class="btn btn-primary" onclick="window.location.href = 'allprint.php'" class=''> Print All Products <i class="fa fa-eye text-success"></i></button>
 							<button class="btn btn-info" onclick="window.location.href = 'allview.php'" class=''> Print QR of All Products <i class="fa fa-eye text-success"></i></button>
 						</div>
-                        <table id="datatable" class="table table-bordered">
+                        <table id="example" class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>Category</th>
@@ -158,6 +158,18 @@
 <script src="plugins/datatables/dataTables.scroller.min.js"></script>
 <script src="plugins/datatables/dataTables.colVis.js"></script>
 <script src="plugins/datatables/dataTables.fixedColumns.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable( {
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 0 },
+            { responsivePriority: 10001, targets: 4 },
+            { responsivePriority: 2, targets: -2 }
+        ]
+    } );
+} );
+</script>
 <script type="text/javascript">
             $(document).ready(function () {
                 $('#datatable').dataTable();
