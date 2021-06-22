@@ -105,7 +105,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     <li>
                                         <h5>Hi, <?php echo $_SESSION["username"]; ?></h5>
                                     </li>
-                                    <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
+                                    <li><a href="profile.php"><i class="ti-user m-r-5"></i> Profile</a></li>
                                     <li><a href="logout.php"><i class="ti-power-off m-r-5"></i> Logout</a></li>
                                 </ul>
                             </li>

@@ -47,7 +47,7 @@
                                     <th>Description</th>
                                     <th>Model</th>
                                     <th>Manufacturing SL</th>
-                                    <th>Status</th>
+                                    <th>Custodian</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -74,7 +74,7 @@
                                         <td><span class="text"><?php echo $row['assets_description'] ?></span></td>
                                         <td><span class="text"><?php echo $row['model'] ?></span></td>
                                         <td><span class="text"><?php echo $row['manu_sl'] ?></span></td>
-                                        <td><span class="text"><?php echo $row['assign_status'] ?></span></td>
+                                        <td><span class="text"><?php echo $row['custody'] ?></span></td>
                                         <td class='text-center'> 
                                             <a href="products_edit.php?id=<?php echo $row['id'] ?>"><button><i class="fa fa-edit text-success"></i></button></a>
 
