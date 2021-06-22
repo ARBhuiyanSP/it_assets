@@ -41,6 +41,8 @@
 											<th>Product ID</th>
 											<th>Product Name</th>
 											<th>Employee Name</th>
+											<th>Division</th>
+											<th>Location</th>
 											<th>Assigned Date</th>
 											<th>Remarks</th>
 											<th>Action</th>
@@ -53,17 +55,22 @@
 											$result = mysqli_query($link, $sql);
 											while($row=mysqli_fetch_array($result))
 											{
-											?>
-												<?php 
+											
 													$product_id=$row['product_id'];
 													$sql2	=	"select * from ams_products where id=$product_id";
 													$result2 = mysqli_query($link, $sql2);
-													$rowp=mysqli_fetch_array($result2)
+													$rowp=mysqli_fetch_array($result2);
+														$employee_id	=	$row['employee_id'];
+														$sqlemp			=	"select * from `employees` where `employee_id`='$employee_id'";
+														$resultemp = mysqli_query($link, $sqlemp);
+														$rowemp=mysqli_fetch_array($resultemp);
 													
 												?>
 												<td><span class="text"><?php echo $rowp['sl_no'] ?></span></td>
 												<td><span class="text"><?php echo $rowp['item_name'] ?></span></td>
-												<td><span class="text"><?php echo $row['employee_id'] ?></span></td>
+												<td><span class="text"><?php echo $rowemp['employee_name'] ?></span></td>
+												<td><span class="text"><?php echo $rowemp['division'] ?></span></td>
+												<td><span class="text"><?php echo $rowemp['location'] ?></span></td>
 												<td><span class="text"><?php echo $row['assign_date'] ?></span></td>
 												<td><span class="text"><?php echo $row['remarks'] ?></span></td>
 												<td class='text-center'> 
