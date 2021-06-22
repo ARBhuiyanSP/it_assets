@@ -159,7 +159,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             </li>
 							
 							<li style="background-color:#049458;">
-                                <a href="assign-entry.php" class="waves-effect"><i class="mdi mdi-account-circle"></i><span> Assign / Transfer </span></a>
+                                <a href="assign-entry.php" class="waves-effect"><i class="mdi mdi-account-circle"></i><span> Assign</span></a>
+                            </li>
+							<li style="background-color:#049458;">
+                                <a href="assign-list.php" class="waves-effect"><i class="mdi mdi-account-circle"></i><span> Assign List </span></a>
                             </li>
 							<li class="menu-title" style="background-color:#AF4940;color:#ffffff;">Reports</li>
 							<li style="background-color:#049458;">
