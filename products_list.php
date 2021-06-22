@@ -42,7 +42,7 @@
                         <table id="datatable" class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Category</th>
+                                    <th>Product ID</th>
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Model</th>
@@ -63,13 +63,7 @@
 									<?php } else{?>
 								<tr class="edit_tr">
 									<?php } ?>
-                                    <td><span class="text"><?php
-                                    $cat_id = $row['assets_category'];
-                                    $sqlc = "select `assets_category` from `assets_categories` where `assets_id`='$cat_id';";
-                                    $resultc = mysqli_query($link, $sqlc);
-                                    $rowc = mysqli_fetch_array($resultc);
-                                    echo $rowc['assets_category']
-                                        ?></span></td>
+                                    <td><span class="text"><?php echo $row['sl_no'] ?></span></td>
                                         <td><span class="text"><?php echo $row['item_name'] ?></span></td>
                                         <td><span class="text"><?php echo $row['assets_description'] ?></span></td>
                                         <td><span class="text"><?php echo $row['model'] ?></span></td>
