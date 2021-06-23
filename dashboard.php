@@ -92,7 +92,7 @@
 								?>
 								<div class="card-box widget-box-two widget-two-success">
                                     <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics"><?php echo $row['assets_category']; ?></p>
+                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="<?php echo $row['assets_category']; ?>" style="background-color:#ffffff;padding:3px;border-radius:5px;"><?php echo $row['assets_category']; ?></p>
                                         <h3><?php echo $procount; ?><small> Total Item</small></h3>
 										<?php
 											$store_id = $_SESSION["store_id"];
