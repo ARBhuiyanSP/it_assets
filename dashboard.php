@@ -91,7 +91,6 @@
 								$procount=mysqli_num_rows($resultpro);
 								?>
 								<div class="card-box widget-box-two widget-two-success">
-                                    <i class="mdi mdi-monitor widget-two-icon"></i>
                                     <div class="wigdet-two-content">
                                         <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics"><?php echo $row['assets_category']; ?></p>
                                         <h3><?php echo $procount; ?><small> </small></h3>
