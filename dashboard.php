@@ -93,8 +93,15 @@
 								<div class="card-box widget-box-two widget-two-success">
                                     <div class="wigdet-two-content">
                                         <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics"><?php echo $row['assets_category']; ?></p>
-                                        <h3><?php echo $procount; ?><small> </small></h3>
-                                        <p class="text-muted m-0"><b></b> </p>
+                                        <h3><?php echo $procount; ?><small> Total Item</small></h3>
+										<?php
+											$store_id = $_SESSION["store_id"];
+											$assets_category	=	$row['assets_id'];
+											$sqlstock	=	"select * FROM `ams_products` WHERE `assets_category`='$assets_category' AND `store_id`='$store_id' AND `assign_status`!='assigned'";
+											$resultstock = mysqli_query($link, $sqlstock);
+											$stockcount=mysqli_num_rows($resultstock);
+										?>
+                                        <p class="text-muted m-0"><b><?php echo $stockcount; ?></b> Instock</p>
                                     </div>
                                 </div>
                             </div>
