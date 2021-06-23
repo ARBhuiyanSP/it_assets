@@ -33,7 +33,7 @@
                                     <div class="wigdet-two-content">
                                         <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Total Vendors</p>
                                         <h2><?php echo $rowcount; ?>  <small><i class="mdi mdi-arrow-up text-success"></i></small></h2>
-                                        <p class="text-muted m-0"><b>Last:</b> 30.4k</p>
+                                        <p class="text-muted m-0"><b></b> </p>
                                     </div>
                                 </div>
                             </div><!-- end col -->
@@ -49,7 +49,7 @@
                                     <div class="wigdet-two-content">
                                         <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="User This Month">Total Employee</p>
                                         <h2><?php echo $empcount; ?>  <small><i class="mdi mdi-arrow-up text-success"></i></small></h2>
-                                        <p class="text-muted m-0"><b>Last:</b> 40.33k</p>
+                                        <p class="text-muted m-0"><b></b> </p>
                                     </div>
                                 </div>
                             </div><!-- end col -->
@@ -65,103 +65,43 @@
                                     <i class="mdi mdi-basket-fill widget-two-icon"></i>
                                     <div class="wigdet-two-content">
                                         <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Total Products</p>
-                                        <h3><?php echo $procount; ?><small> Stock</small></h3>
-                                        <p class="text-muted m-0"><b>25</b> Using</p>
+                                        <h3><?php echo $procount; ?><small> </small></h3>
+                                        <p class="text-muted m-0"><b></b> </p>
                                     </div>
                                 </div>
                             </div><!-- end col -->
                         </div>
 						<div class="row">
+							
+							
+							
+							
+							<?php 
+								$sql = "select * FROM `assets_categories`";
+								$result = mysqli_query($link, $sql);
+								while ($row = mysqli_fetch_array($result)) {
+							?>
+							
 							<div class="col-lg-2 col-md-2">
                                 <?php
-								$sqlpro	=	"select * from ams_products";
+								$assets_category	=	$row['assets_id'];
+								$sqlpro	=	"select * FROM `ams_products` WHERE `assets_category`='$assets_category'";
 								$resultpro = mysqli_query($link, $sqlpro);
 								$procount=mysqli_num_rows($resultpro);
 								?>
 								<div class="card-box widget-box-two widget-two-success">
                                     <i class="mdi mdi-monitor widget-two-icon"></i>
                                     <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Desktop</p>
-                                        <h3><?php echo $procount; ?><small> Stock</small></h3>
-                                        <p class="text-muted m-0"><b>25</b> Using</p>
+                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics"><?php echo $row['assets_category']; ?></p>
+                                        <h3><?php echo $procount; ?><small> </small></h3>
+                                        <p class="text-muted m-0"><b></b> </p>
                                     </div>
                                 </div>
                             </div>
-							<div class="col-lg-2 col-md-2">
-                                <?php
-								$sqlpro	=	"select * from ams_products";
-								$resultpro = mysqli_query($link, $sqlpro);
-								$procount=mysqli_num_rows($resultpro);
-								?>
-								<div class="card-box widget-box-two widget-two-success">
-                                    <i class="mdi mdi-laptop widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Laptop</p>
-                                        <h3><?php echo $procount; ?><small> Stock</small></h3>
-                                        <p class="text-muted m-0"><b>25</b> Using</p>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="col-lg-2 col-md-2">
-                                <?php
-								$sqlpro	=	"select * from ams_products";
-								$resultpro = mysqli_query($link, $sqlpro);
-								$procount=mysqli_num_rows($resultpro);
-								?>
-								<div class="card-box widget-box-two widget-two-success">
-                                    <i class="mdi mdi-mouse widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Mouse</p>
-                                        <h3><?php echo $procount; ?><small> Stock</small></h3>
-                                        <p class="text-muted m-0"><b>25</b> Using</p>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="col-lg-2 col-md-2">
-                                <?php
-								$sqlpro	=	"select * from ams_products";
-								$resultpro = mysqli_query($link, $sqlpro);
-								$procount=mysqli_num_rows($resultpro);
-								?>
-								<div class="card-box widget-box-two widget-two-success">
-                                    <i class="mdi mdi-keyboard widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Keyboard</p>
-                                        <h3><?php echo $procount; ?><small> Stock</small></h3>
-                                        <p class="text-muted m-0"><b>25</b> Using</p>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="col-lg-2 col-md-2">
-                                <?php
-								$sqlpro	=	"select * from ams_products";
-								$resultpro = mysqli_query($link, $sqlpro);
-								$procount=mysqli_num_rows($resultpro);
-								?>
-								<div class="card-box widget-box-two widget-two-success">
-                                    <i class="mdi mdi-router-wireless widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Router</p>
-                                        <h3><?php echo $procount; ?><small> Stock</small></h3>
-                                        <p class="text-muted m-0"><b>25</b> Using</p>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="col-lg-2 col-md-2">
-                                <?php
-								$sqlpro	=	"select * from ams_products";
-								$resultpro = mysqli_query($link, $sqlpro);
-								$procount=mysqli_num_rows($resultpro);
-								?>
-								<div class="card-box widget-box-two widget-two-success">
-                                    <i class="mdi mdi-switch widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Switch</p>
-                                        <h3><?php echo $procount; ?><small> Stock</small></h3>
-                                        <p class="text-muted m-0"><b>25</b> Using</p>
-                                    </div>
-                                </div>
-                            </div>
+							<?php } ?>
+							
+							
+							
                         </div>
                     </div> <!-- container -->
 
