@@ -1,4 +1,7 @@
 <?php include('header.php');
+
+	$id = $_GET['id'];
+
 ?>
             <!-- Left Sidebar End -->
 			<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -31,7 +34,6 @@
 							<!-- end row -->
 							<div class="row">
 							<?php
-							$id = $_GET['id'];
 							$sql	=	"select * from ams_products where id=$id";
 							$result = mysqli_query($link, $sql);
 							$row=mysqli_fetch_array($result);
@@ -77,50 +79,12 @@
 								<img src="<?php echo $row['qr_image'] ?>" height="250" />
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-xs-2">
-								<div class="form-group">
-									<?php 
-										$product_id= $row['id'];
-										$sql2	= "SELECT * FROM product_assign WHERE product_id=$product_id ORDER BY id DESC LIMIT 1 ;";
-										$result2 = mysqli_query($link, $sql2);
-										$row2=mysqli_fetch_array($result2);
-										?>
-									<label>Assign To</label>
-									<?php 
-									$employee_id=$row2['employee_id'];
-									$sql3	= "SELECT * FROM `employees` WHERE `employee_id`='$employee_id' ;";
-									$result3 = mysqli_query($link, $sql3);
-									$row3=mysqli_fetch_array($result3);
-									?>
-									<input name="employee_id" type="text" class="form-control" id="" value="<?php echo $row3['employee_name'] ?>" readonly />
-								</div>
-							</div>
-							<div class="col-xs-2">
-								<div class="form-group">
-									<label>Assign Date</label>
-									<input name="assign_date" type="text" class="form-control" id="" value="<?php echo $row2['assign_date'] ?>" readonly />
-								</div>
-							</div>
-							<div class="col-xs-4">
-								<div class="form-group">
-									<label>Remarks</label>
-									<input name="remarks" type="text" class="form-control" id="" value="<?php echo $row2['remarks'] ?>" readonly />
-								</div>
-							</div>
-						</div>
-						<h3 style="color:red;">Want To Transfer This Product ?</h3>
-						<form action="movetotransfer.php" method="post">
+						<h3 style="color:red;">Want To Assign This Product ?</h3>
+						<form action="movetoassign.php" method="post">
 							<div class="row">
 								<div class="col-xs-4">
 									<div class="form-group">
-										<?php 
-											$product_id= $row['id'];
-											$sql2	= "SELECT * FROM product_assign WHERE product_id=$product_id ORDER BY id DESC LIMIT 1 ;";
-											$result2 = mysqli_query($link, $sql2);
-											$row2=mysqli_fetch_array($result2);
-											?>
-										<label>Transfer To</label>
+										<label>Assign To</label>
 										<select id="dv" name="employee_id" class="form-control select2">
 											<option>Select Employee</option>
 											<?php 
@@ -137,8 +101,8 @@
 								</div>
 								<div class="col-xs-4">
 									<div class="form-group">
-										<label>Transfer Date</label>
-										<input name="assign_date" type="text" class="form-control" id="rndate" value=""  autocomplete="off" />
+										<label>Assign Date</label>
+										<input name="assign_date" type="text" class="form-control" id="rndate" value="" size="30" autocomplete="off"/>
 									</div>
 								</div>
 							</div>
@@ -150,16 +114,15 @@
 									</div>
 								</div>
 							</div>
-							<button class="btn btn-danger" type="submit" name="submit"> Transfer This Product</i></button>
-							<input type="text" name="id" value="<?php echo $row2['id'] ?>" />
-							<input type="hidden" name="product_id" value="<?php echo $product_id ?>" />
+							<button class="btn btn-danger" type="submit" name="submit"> Assign This Product</i></button>
+							<input type="hidden" name="product_id" value="<?php echo $id ?>" />
 						</form>
                     </div> <!-- container -->
 
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                   2018 - <?php echo date('Y'); ?> © <a href="" target="blank">Saif Powertec LTD</a>
+                   2018 - <?php echo date('Y'); ?> © <a href="" target="blank">Saif Powertec</a>
                 </footer>
 
             </div>

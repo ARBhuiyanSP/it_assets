@@ -39,17 +39,18 @@
 							<button class="btn btn-primary" onclick="window.location.href = 'allprint.php'" class=''> Print All Products <i class="fa fa-eye text-success"></i></button>
 							<button class="btn btn-info" onclick="window.location.href = 'allview.php'" class=''> Print QR of All Products <i class="fa fa-eye text-success"></i></button>
 						</div>
-                        <table id="example" class="table table-bordered">
+                        <table id="datatable-fixed-col" class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Category</th>
-                                    <th>PID</th>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Model</th>
-                                    <th>Manufacturing SL</th>
-                                    <th>Custodian</th>
-                                    <th>Action</th>
+                                    <th style="min-width:70px;">PID</th>
+                                    <th style="min-width:100px;">Category</th>
+                                    <th style="min-width:200px;">Name</th>
+                                    <th style="min-width:250px;">Description</th>
+                                    <th style="min-width:100px;">Model</th>
+                                    <th style="min-width:150px;">Manufacturing SL</th>
+                                    <th style="min-width:150px;">Custodian</th>
+                                    <th style="min-width:100px;">Status</th>
+                                    <th style="min-width:170px;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,6 +65,7 @@
 									<?php } else{?>
 								<tr class="edit_tr">
 									<?php } ?>
+										<td><span class="text"><?php echo $row['sl_no'] ?></span></td>
                                     <td><span class="text"><?php
                                     $cat_id = $row['assets_category'];
                                     $sqlc = "select `assets_category` from `assets_categories` where `assets_id`='$cat_id';";
@@ -71,18 +73,26 @@
                                     $rowc = mysqli_fetch_array($resultc);
                                     echo $rowc['assets_category']
                                         ?></span></td>
-										<td><span class="text"><?php echo $row['sl_no'] ?></span></td>
                                         <td><span class="text"><?php echo $row['item_name'] ?></span></td>
                                         <td><span class="text"><?php echo $row['assets_description'] ?></span></td>
                                         <td><span class="text"><?php echo $row['model'] ?></span></td>
                                         <td><span class="text"><?php echo $row['manu_sl'] ?></span></td>
                                         <td><span class="text"><?php echo $row['custody'] ?></span></td>
+                                        <td><span class="text"><?php echo $row['assign_status'] ?></span></td>
                                         <td class='text-center'> 
                                             <a href="products_edit.php?id=<?php echo $row['id'] ?>"><button><i class="fa fa-edit text-success"></i></button></a>
 
                                             <a href="del-product.php?id=<?php echo $row['id'] ?>"><button onclick="" class=''><i class="fa fa-trash text-danger"></i></button></a>
                                             <button onclick="window.location.href = 'qrview.php?id=<?php echo $row['id'] ?>'" class=''><i class="fa fa-eye text-success"></i></button>
                                             <button onclick="window.location.href = 'qrprintview.php?id=<?php echo $row['id'] ?>'" class=''><i class="fa fa-print text-success"></i></button>
+											
+                                            
+											<?php if($row['assign_status']=='assigned'){ ?>
+											<button onclick="window.location.href = 'transfer.php?id=<?php echo $row['id'] ?>'" title="Transfer"><i class="fa fa-user text-success"></i></button>
+											<button onclick="window.location.href = 'refund.php?id=<?php echo $row['id'] ?>'"  title="Return"><i class="mdi mdi-wrap text-success"></i></button>
+											<?php }else{ ?>
+											<button onclick="window.location.href = 'product-assign.php?id=<?php echo $row['id'] ?>'" title="Assign"><i class="fa fa-user text-success"></i></button>
+											<?php } ?>
                                         </td>
                                     </tr>
 
@@ -158,18 +168,7 @@
 <script src="plugins/datatables/dataTables.scroller.min.js"></script>
 <script src="plugins/datatables/dataTables.colVis.js"></script>
 <script src="plugins/datatables/dataTables.fixedColumns.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#example').DataTable( {
-        responsive: true,
-        columnDefs: [
-            { responsivePriority: 1, targets: 0 },
-            { responsivePriority: 10001, targets: 4 },
-            { responsivePriority: 2, targets: -2 }
-        ]
-    } );
-} );
-</script>
+
 <script type="text/javascript">
             $(document).ready(function () {
                 $('#datatable').dataTable();
@@ -202,7 +201,7 @@ $(document).ready(function() {
             });
             TableManageButtons.init();
 
-</script>
+        </script>
 
 <!-- Counter js  -->
 <script src="plugins/waypoints/jquery.waypoints.min.js"></script>
