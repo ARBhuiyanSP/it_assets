@@ -84,8 +84,9 @@
 							
 							<div class="col-lg-2 col-md-2">
                                 <?php
+								$store_id = $_SESSION["store_id"];
 								$assets_category	=	$row['assets_id'];
-								$sqlpro	=	"select * FROM `ams_products` WHERE `assets_category`='$assets_category'";
+								$sqlpro	=	"select * FROM `ams_products` WHERE `assets_category`='$assets_category' AND `store_id`='$store_id'";
 								$resultpro = mysqli_query($link, $sqlpro);
 								$procount=mysqli_num_rows($resultpro);
 								?>
