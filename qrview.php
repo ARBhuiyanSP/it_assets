@@ -86,16 +86,26 @@ $id=$_GET['id'];
 									</tr>
 									<tr>
 										<th>Purchase Date:</th>
-										<td><?php echo $row['puchase_date'] ?></td>
+										<td><?php echo $row['puchase_date']; ?></td>
 									</tr>
 									<tr>
 										<th>Custody:</th>
-										<td><?php echo $row['custody'] ?></td>
+										<td><?php echo $row['custody']; ?></td>
 									</tr>
 									<tr>
 										<th>User:</th>
-											<?php if($row['assign_status']=='assigned'){ ?>
-										<td>+++</td>
+											<?php if($row['assign_status']=='assigned'){ 
+											$products_id	=	$row['id'];
+												$sqlassign	= "select * FROM `product_assign` WHERE `product_id`='$products_id' ORDER BY `id` DESC LIMIT 1 ";
+												$resultassign = mysqli_query($link, $sqlassign);
+												$rowassign=mysqli_fetch_array($resultassign);
+												
+													$employee_id = $rowassign['employee_id'];
+													$sqlemployee	= "select * from `employees` where `employee_id`='$employee_id'";
+													$resultemployee = mysqli_query($link, $sqlemployee);
+													$rowemployee=mysqli_fetch_array($resultemployee);
+											?>
+										<td><?php echo $rowassign['employee_id']; ?> || <?php echo $rowemployee["employee_name"]; ?> || <?php echo $rowemployee["division"]; ?>-<?php echo $rowemployee["department"]; ?></td>
 											<?php }else{ ?>
 										<td>---</td>
 										<?php } ?>
