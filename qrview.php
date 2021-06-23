@@ -37,8 +37,8 @@ $id=$_GET['id'];
 										<td style="text-align:center">
 											<div class="headbody">
 												<h1 align="center"><img src="images/blc-logo.png" width="162" height=""></h1>
-												<h2 align="center">SAIF POWER GROUP LTD</h2>
-												<p align="center">Gulshan Grace, Apartment # 5E, Building # B, C.W.S. (C)-8,South Avenue, Gulshan-1, Dhaka, Bangladesh.</p>
+												<h2 align="center">SAIF POWER GROUP</h2>
+												<p align="center">Rupayan Centre(8th Floor),72, Mohakhali C/A,Dhaka-1212,Bangladesh</p>
 												<h3 align="center">Assets Details</h3>
 												<h1 align="center"><img src="<?php echo $row['qr_image'] ?>" height="200" /></h1>
 											</div>
