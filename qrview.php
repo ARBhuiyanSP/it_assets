@@ -63,6 +63,10 @@ $id=$_GET['id'];
 										<td><?php echo $row['model'] ?></td>
 									</tr>
 									<tr>
+										<th>Description:</th>
+										<td><?php echo $row['assets_description'] ?></td>
+									</tr>
+									<tr>
 										<th>RLP No:</th>
 										<td><?php echo $row['rlp_no'] ?></td>
 									</tr>
@@ -72,7 +76,13 @@ $id=$_GET['id'];
 									</tr>
 									<tr>
 										<th>Vendor Name:</th>
-										<td><?php echo $row['vendor_name'] ?></td>
+											<?php 
+												$vendor_id = $row['vendor_name'];
+												$sqlvendor	= "select * from `vendors` where `vendor_id`='$vendor_id'";
+												$resultvendor = mysqli_query($link, $sqlvendor);
+												$rowvendor=mysqli_fetch_array($resultvendor);
+											?>
+										<td><?php echo $rowvendor['vendor_name']; ?></td>
 									</tr>
 									<tr>
 										<th>Purchase Date:</th>
