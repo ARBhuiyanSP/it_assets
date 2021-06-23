@@ -61,9 +61,9 @@
 										
 									if($row['assign_status']=='assigned'){
 										?>
-								<tr class="edit_tr" style="background-color:#AF4940;color:#ffffff;">
+								<tr class="edit_tr" style="background-color:#F5A143;color:#ffffff;">
 									<?php } else{?>
-								<tr class="edit_tr">
+								<tr class="edit_tr" style="background-color:#64D55F;color:#ffffff;">
 									<?php } ?>
 										<td><span class="text"><?php echo $row['sl_no'] ?></span></td>
                                     <td><span class="text"><?php
