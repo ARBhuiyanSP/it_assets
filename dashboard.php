@@ -77,7 +77,7 @@
 							
 							
 							<?php 
-								$sql = "select * FROM `assets_categories`";
+								$sql = "select * FROM `assets_categories` LIMIT 12";
 								$result = mysqli_query($link, $sql);
 								while ($row = mysqli_fetch_array($result)) {
 							?>
