@@ -158,9 +158,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                 <a href="products_list.php" class="waves-effect"><i class="mdi mdi-wrap"></i><span> Assets List </span></a>
                             </li>
 							
-							<li style="background-color:#049458;">
+							<!-- <li style="background-color:#049458;">
                                 <a href="assign-entry.php" class="waves-effect"><i class="mdi mdi-account-circle"></i><span> Assign</span></a>
-                            </li>
+                            </li> -->
 							<li style="background-color:#049458;">
                                 <a href="assign-list.php" class="waves-effect"><i class="mdi mdi-account-circle"></i><span> Assign List </span></a>
                             </li>
