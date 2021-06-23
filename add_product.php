@@ -5,13 +5,13 @@ include "phpqrcode/qrlib.php";
 if(isset($_POST['Submit']) && !empty($_POST['Submit']) ){
 
     // how to save PNG codes to server 
-     $manufacturing_sl 	= $_POST['manufacturing_sl'];
+     $sl_no 	= $_POST['sl_no'];
      
     $tempDir = "images/qr_images/"; 
 	$todaysDate = date('Ymd');
 	$model = "M".$_POST['model'];
 	$id = "1";
-    $codeContents = 'BLC-'.$manufacturing_sl; 
+    $codeContents = 'SPL-'.$sl_no; 
      
     // we need to generate filename somehow,  
     // with md5 or with database ID used to obtains $codeContents... 
