@@ -83,7 +83,7 @@
                                         <td class='text-center'> 
                                             <a href="products_edit.php?id=<?php echo $row['id'] ?>"><button><i class="fa fa-edit text-success"></i></button></a>
 
-                                            <a href="del-product.php?id=<?php echo $row['id'] ?>"><button onclick="" class=''><i class="fa fa-trash text-danger"></i></button></a>
+                                            <!-- <a href="del-product.php?id=<?php echo $row['id'] ?>"><button onclick="" class=''><i class="fa fa-trash text-danger"></i></button></a> -->
                                             <button onclick="window.location.href = 'qrview.php?id=<?php echo $row['id'] ?>'" class=''><i class="fa fa-eye text-success"></i></button>
                                             <button onclick="window.location.href = 'qrprintview.php?id=<?php echo $row['id'] ?>'" class=''><i class="fa fa-print text-success"></i></button>
 											
