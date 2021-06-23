@@ -85,8 +85,8 @@ if(isset($_POST['submit'])){
 								<div class="col-xs-4">
 									<div class="form-group">
 										<label>Assign To</label>
-										<select id="dv" name="employee_id" class="form-control select2">
-											<option>Select Employee</option>
+										<select id="dv" name="employee_id" class="form-control select2" required >
+											<option value="">Select Employee</option>
 											<?php 
 											$sql	= "select * from employees ORDER BY id ASC";
 											$result = mysqli_query($link, $sql);

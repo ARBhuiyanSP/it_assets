@@ -92,6 +92,14 @@ $id=$_GET['id'];
 										<th>Custody:</th>
 										<td><?php echo $row['custody'] ?></td>
 									</tr>
+									<tr>
+										<th>User:</th>
+											<?php if($row['assign_status']=='assigned'){ ?>
+										<td>+++</td>
+											<?php }else{ ?>
+										<td>---</td>
+										<?php } ?>
+									</tr>
 								</table>
 							</div>
                             <div class="col-sm-1"></div>

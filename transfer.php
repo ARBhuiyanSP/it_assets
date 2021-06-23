@@ -121,8 +121,8 @@
 											$row2=mysqli_fetch_array($result2);
 											?>
 										<label>Transfer To</label>
-										<select id="dv" name="employee_id" class="form-control select2">
-											<option>Select Employee</option>
+										<select id="dv" name="employee_id" class="form-control select2" required >
+											<option value="">Select Employee</option>
 											<?php 
 											$sql	= "select * from employees ORDER BY id ASC";
 											$result = mysqli_query($link, $sql);
