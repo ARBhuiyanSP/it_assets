@@ -55,8 +55,16 @@
                             </thead>
                             <tbody>
                                  <?php
+                                    $role = $_SESSION["role"];
                                     $store_id = $_SESSION["store_id"];
-									$sql = "select * from ams_products where `store_id`='$store_id'";
+									
+									if($role == 'user'){
+										$sql = "select * from ams_products where `store_id`='$store_id'";
+									}else{
+										$sql = "select * from ams_products";
+									}
+									
+									//$sql = "select * from ams_products where `store_id`='$store_id'";
                                     $result = mysqli_query($link, $sql);
                                     while ($row = mysqli_fetch_array($result)) {
 										
