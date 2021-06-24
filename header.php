@@ -136,7 +136,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 								</a>
 								<ul class="nav-second-level" aria-expanded="false">
 									<li><a href="vendors.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Vendors </span></a></li>
-									<li><a href="clients.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Clients </span></a></li>
 									<li><a href="company.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Company </span></a></li>
 									<li><a href="division.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Division </span></a></li>
 									<li><a href="department.php" class="waves-effect"><i class="mdi mdi-panorama-fisheye"></i><span>Department </span></a></li>
@@ -176,9 +175,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             </li>
 							<li style="background-color:#049458;">
                                 <a href="gate_pass_list.php" class="waves-effect"><i class="mdi mdi-wrap"></i><span> Gate Pass List</span></a>
-                            </li>
-							<li style="background-color:#049458;">
-                                <a href="assets-return.php" class="waves-effect"><i class="mdi mdi-account-multiple"></i><span> Assets Return</span></a>
                             </li>
 							<li style="background-color:#049458;">
                                 <a href="disposal-entry.php" class="waves-effect"><i class="mdi mdi-account-multiple"></i><span> Disposal </span></a>
